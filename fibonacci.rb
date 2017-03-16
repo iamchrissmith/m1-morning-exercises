@@ -2,13 +2,12 @@
 # print if each number is prime or not
 require 'prime'
 
-# def fib
+
 numbers = []
 until numbers.length == 25
   calc1 = numbers.last
   calc2 = numbers[-2]
 
-  # puts "#{calc2} + #{calc1}"
   if !calc1 && !calc2
     numbers[0] = 0
     numbers[1] = 0
@@ -26,6 +25,3 @@ numbers.each.with_index do |n,idx|
     puts "#{idx + 1}:\t#{n}"
   end
 end
-# end
-#
-# fib
