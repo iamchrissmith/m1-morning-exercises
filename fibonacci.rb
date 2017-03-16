@@ -1,7 +1,17 @@
 # print first 25 numbers in fib
 # print if each number is prime or not
-require 'prime'
 
+def is_prime?(num)
+  if num < 0
+    false
+  elsif num.between?(0,2)
+    true
+  elsif ((2..Math.sqrt(num).floor).to_a.all?{|x| num % x != 0})
+    true
+  else
+    false
+  end
+ end
 
 numbers = []
 until numbers.length == 25
@@ -19,7 +29,7 @@ until numbers.length == 25
 end
 
 numbers.each.with_index do |n,idx|
-  if Prime.prime?(n)
+  if is_prime?(n)
     puts "#{idx + 1}:\t#{n}\t(Prime)"
   else
     puts "#{idx + 1}:\t#{n}"
